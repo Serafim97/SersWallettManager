@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purple_200"
+    android:orientation="vertical"
+    tools:context=".Activities.IncomeActivity">
+    <include
+        android:id="@+id/toggle"
+        layout="@layout/menu_drawer"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_width="match_parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etIncome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/white"
+                    android:padding="@dimen/_5sdp"
+                    android:hint="Name of Income" />
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/white"
+                    android:padding="@dimen/_5sdp"
+                    android:inputType="number"
+                    android:hint="Amount" />
+
+                <EditText
+                    android:id="@+id/etDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:padding="@dimen/_5sdp"
+                    android:hint="Date" />
+
+                <Spinner
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:labelFor="@id/currency"
+                    android:background="@color/white"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                 />
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:fabSize="auto"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:src="@drawable/ic_baseline_add_24" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/swOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:thumb="@drawable/custom_thumb"
+                app:track="@drawable/custom_track"
+                />
+            <TextView
+                android:id="@+id/etDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/_5sdp"
+                android:hint="Name of Expense" />
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvIncomeList"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

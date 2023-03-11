@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    tools:context=".Activities.StatsActivity">
+
+    <include
+        android:id="@+id/toggle"
+        layout="@layout/menu_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barchart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/switchExpenses"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggle"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="36dp"
+        android:textSize="@dimen/_15sdp"
+        android:thumb="@drawable/custom_thumb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:track="@drawable/custom_track" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/orangle"
+        android:padding="@dimen/_5sdp"
+        android:text="Expenses"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/switchExpenses"
+        app:layout_constraintTop_toTopOf="@+id/switchExpenses"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_15sdp"
+        android:thumb="@drawable/custom_thumb"
+        app:layout_constraintEnd_toEndOf="@+id/switchExpenses"
+        app:layout_constraintStart_toStartOf="@+id/switchExpenses"
+        app:layout_constraintTop_toBottomOf="@+id/switchExpenses"
+        app:track="@drawable/custom_track" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/skyblue"
+        android:padding="@dimen/_5sdp"
+        android:text="Income"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/switchIncome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/switchIncome"
+        app:layout_constraintTop_toBottomOf="@+id/switchExpenses" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
